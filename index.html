@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <title>RUNSUS MEMBER — Never giveup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div id="snow" class="snow" aria-hidden="true"></div>
+  <div class="music-panel">
+    <button id="musicBtn" class="music-btn" aria-label="เปิดหรือปิดเพลง">♫ <span>PLAY MUSIC</span></button><div id="musicHint" class="music-hint">กำลังเปิดเพลง…</div>
+    <div class="music-note">RUNSUS SOUND</div>
+  </div>
+  <iframe id="ytPlayer"
+    class="yt-player"
+    title="RUNSUS music"
+    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <div class="bg-glow"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <img src="logo.png" alt="RUNSUS Logo">
+      <span>RUNSUS MEMBER</span>
+    </a>
+    <a class="admin-link" href="#admin">ADMIN</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-logo" src="logo.png" alt="RUNSUS">
+      <div class="eyebrow">RUNSUS MEMBER</div>
+      <h1>NEVER GIVEUP</h1>
+      <p>RUNSUS MEMBER — Never giveup.</p>
+      <a class="primary-btn" href="#members">VIEW MEMBERS</a>
+    </section>
+
+    <section id="members" class="members-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">RUNSUS MEMBER</div>
+          <h2>Never giveup</h2>
+        </div>
+        <div class="count" id="memberCount">0 MEMBERS</div>
+      </div>
+
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Search member..." autocomplete="off">
+      </div>
+
+      <div id="memberGrid" class="member-grid"></div>
+      <div id="emptyState" class="empty hidden">No members found.</div>
+    </section>
+
+    <section id="admin" class="admin-section">
+      <div class="admin-card" id="loginCard">
+        <div class="eyebrow">PRIVATE AREA</div>
+        <h2>RUNSUS ADMIN</h2>
+        <p>Enter the admin key to manage members.</p>
+        <input id="adminKey" type="password" placeholder="Admin Key">
+        <button class="primary-btn full" id="loginBtn">ENTER DASHBOARD</button>
+      </div>
+
+      <div class="admin-card hidden" id="dashboard">
+        <div class="dashboard-head">
+          <div>
+            <div class="eyebrow">CONTROL PANEL</div>
+            <h2>RUNSUS ADMIN</h2>
+          </div>
+          <button class="ghost-btn" id="logoutBtn">LOGOUT</button>
+        </div>
+
+        <form id="memberForm" class="member-form">
+          <input type="hidden" id="editId">
+          <label>Name<input id="name" required placeholder="Member name"></label>
+          <label>Role<input id="role" required placeholder="Member / Founder / Staff"></label>
+          <label>รูปสมาชิก<input id="imageFile" type="file" accept="image/*"><small class="upload-help">เลือกไฟล์รูปจากเครื่อง หรือใช้ URL ด้านล่าง</small><input id="image" placeholder="https://..." autocomplete="off"><img id="imagePreview" class="image-preview hidden" alt="ตัวอย่างรูปสมาชิก"></label>
+          <label>Facebook URL<input id="facebook" placeholder="https://facebook.com/..."></label>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit" id="saveBtn">ADD MEMBER</button>
+            <button class="ghost-btn hidden" type="button" id="cancelEdit">CANCEL</button>
+          </div>
+        </form>
+
+        <div class="admin-list" id="adminList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> RUNSUS MEMBER — Never giveup. All rights reserved.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
